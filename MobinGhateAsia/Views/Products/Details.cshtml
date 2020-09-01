@@ -1,0 +1,102 @@
+﻿@using Models
+@model Models.ViewModels.ProductDetailViewModel
+
+@{
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+    <!-- INNER PAGE BANNER -->
+    <div class="wt-bnr-inr overlay-wraper" style="background-image:url('/Assets/images/header.jpg');">
+        <div class="overlay-main bg-black" style="opacity:0.5;"></div>
+        <div class="container">
+            <div class="wt-bnr-inr-entry">
+                <h1 class="text-white">@Model.Product.TitleSrt</h1>
+            </div>
+        </div>
+    </div>
+
+
+<div class="bg-gray-light p-tb20">
+        <div class="container">
+            <ul class="wt-breadcrumb breadcrumb-style-1">
+                <li><a href="/@ViewContext.RouteData.Values["language"]">@Resources.Label.MenuHome</a></li>
+                <li><a href="/@ViewContext.RouteData.Values["language"]/productgroup">@Resources.Label.MenuProduct</a></li>
+              
+                <li><a href="/@ViewContext.RouteData.Values["language"]/product/@Model.Product.ProductGroupId">@Model.Product.ProductGroup.TitleSrt</a></li>
+                <li>@Model.Product.TitleSrt</li>
+            </ul>
+        </div>
+    </div>
+    <!-- BREADCRUMB ROW END -->
+    <!-- SECTION CONTENT START -->
+    <div class="section-full p-t80 p-b50">
+
+        <!-- PRODUCT DETAILS -->
+        <div class="container woo-entry">
+            <div class="row m-b30">
+                <div class="col-md-4 col-sm-4 m-b30">
+                    <div class="wt-box wt-product-gallery">
+                        <a href="javascript:void(0);"><img src="@Model.Product.ImageUrl" alt="@Model.Product.TitleSrt"></a>
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-8 body-product-content">
+                    <div class="wt-post-title ">
+                        <h2 class="post-title">@Model.Product.TitleSrt</h2>
+                    </div>
+                 
+                    <div class="wt-post-text">
+                        <p class="m-b10">@Html.Raw(Model.Product.BodySrt)   </p>
+                    </div>
+             
+                </div>
+            </div>
+
+           
+            <div class="p-b10">
+                <h3>@Resources.Label.RelatedProduct <a href="/@ViewContext.RouteData.Values["language"]/product/@Model.Product.ProductGroupId">@Model.Product.ProductGroup.TitleSrt</a></h3>
+                <div class="wt-separator-outer  m-b30">
+                    <div class="wt-separator style-square">
+                        <span class="separator-left bg-primary"></span>
+                        <span class="separator-right bg-primary"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row m-b30">
+                @foreach (Product product in Model.RelatedProducts)
+                {
+                    <div class="col-md-3 col-sm-4 col-xs-6 col-xs-100pc m-b30">
+                        <div class="wt-box wt-product-box">
+                            <div class="wt-thum-bx wt-img-overlay1 wt-img-effect zoom">
+                                <img src="@product.ImageUrl" alt="@product.TitleSrt" width="280px" height="280px">
+                                <div class="overlay-bx">
+                                    <div class="overlay-icon">
+                                        <a href="/@ViewContext.RouteData.Values["language"]/product/@product.ProductGroupId/@product.Id">
+                                            <i class="fa fa-send wt-icon-box-xs"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wt-info  text-center">
+                                <div class="p-a10 bg-white">
+                                    <h4 class="wt-title">
+                                        <a href="/@ViewContext.RouteData.Values["language"]/product/@product.ProductGroupId/@product.Id">@product.TitleSrt</a>
+                                    </h4>
+                                    <div class="rating-bx">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="p-t10">
+                                        <a class="site-button  m-r15" href="/@ViewContext.RouteData.Values["language"]/product/@product.ProductGroupId/@product.Id"><i class="fa fa-angle-double-left"></i>@Resources.Label.ViewDetail </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+   

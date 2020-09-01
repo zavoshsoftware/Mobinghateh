@@ -1,0 +1,404 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <title>@ViewBag.Title</title>
+    @*@Styles.Render("~/Content/css")*@
+    @*@Scripts.Render("~/bundles/modernizr")*@
+    <link href="~/Content/app.v2.css" rel="stylesheet" />
+    <script src="/Scripts/AdminJS/app.v2.js"></script>
+
+    <script src="/Scripts/AdminJS/calendar/bootstrap_calendar.js" cache="false"></script>
+    <script src="/Scripts/AdminJS/calendar/demo.js" cache="false"></script>
+    <script src="/Scripts/AdminJS/sortable/jquery.sortable.js" cache="false"></script>
+    <!--This bundle was moved by the Telerik VS Extensions for compatibility reasons-->
+    @*@Scripts.Render("~/bundles/jquery")*@
+    <link href="@Url.Content("~/Content/kendo/2017.3.913/kendo.common.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2017.3.913/kendo.mobile.all.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2017.3.913/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2017.3.913/kendo.default.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2017.3.913/kendo.dataviz.default.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2017.3.913/kendo.rtl.min.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/kendo/2017.3.913/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2017.3.913/jszip.min.js")"></script>
+    @*<script src="@Url.Content("~/Scripts/kendo/2016.2.504/kendo.all.min.js")"></script>*@
+    <script src="~/Scripts/kendo/2017.3.913/kendo.all.min.js"></script>
+    @*<script src="~/Scripts/KendoPersianDate/JalaliDate.js"></script>
+    <script src="~/Scripts/KendoPersianDate/kendo.web.js"></script>
+    <script src="~/Scripts/KendoPersianDate/fa-IR.js"></script>*@
+    <script src="@Url.Content("~/Scripts/kendo/2017.3.913/kendo.aspnetmvc.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+    <link href="~/Content/font.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Scripts/AdminJS/calendar/bootstrap_calendar.css" type="text/css" cache="false" />
+    <link href="~/Content/admin-font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/AdminStyle.css" rel="stylesheet" />
+</head>
+
+<body class="k-rtl">
+    <section class="vbox">
+        <header class="bg-dark dk header navbar navbar-fixed-top-xs">
+            <div class="navbar-header aside-md">
+                <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="#nav"><i class="fa fa-bars"></i></a><a href="/" class="navbar-brand">
+                    <img src="~/images/logo.png" class="m-r-sm">
+                </a><a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".nav-user"><i class="fa fa-cog"></i></a>
+            </div>
+            <ul class="nav navbar-nav hidden-xs"></ul>
+            <ul class="nav navbar-nav navbar-right hidden-xs nav-user">
+                <li class="hidden-xs">
+                    <a href="#" class="dropdown-toggle dk" data-toggle="dropdown">
+                        <i class="fa fa-bell"></i><span class="badge badge-sm up bg-danger m-l-n-sm count">
+                            0
+                        </span>
+                    </a>
+                    <section class="dropdown-menu aside-xl">
+                        <section class="panel bg-white">
+                            <header class="panel-heading b-light bg-light">
+                                <strong>
+                                    شما <span class="count">
+
+                                    </span> اعلان دارید
+                                </strong>
+                            </header>
+
+                            <footer class="panel-footer text-sm"></footer>
+                        </section>
+                    </section>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="thumb-sm avatar pull-left">
+                            <img src="~/images/avatar_default.jpg" />
+                        </span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight">
+                        <span class="arrow top"></span>
+                        <li><a href="#">پروفایل</a> </li>
+                        <li><a href="#">Help</a> </li>
+                        <li class="divider"></li>
+                        <li>
+                            @Html.ActionLink("خروج", "LogOff", "Account")
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+        <section>
+            <section class="hbox stretch">
+                <!-- .aside -->
+                <aside class="bg-dark lter aside-md hidden-print nav-xs-right" id="nav" style="width:260px;">
+                    <section class="vbox">
+
+                        <section class="w-f scrollable">
+                            <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px" data-color="#333333">
+                                <!-- nav -->
+                                <nav class="nav-primary hidden-xs">
+                                    <ul class="nav">
+                                        @*<li id="blogLi" class="menuitem">
+                                            <a href="#">
+                                                <i class="fa fa-sitemap icon"><b class="bg-primary"></b></i><span class="pull-right"><i class="fa fa-angle-down text"></i><i class="fa fa-angle-up text-active"></i></span><span>وبلاگ</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="/BlogCategories">
+                                                        <i class="fa fa-angle-left"></i><span>مدیریت گروه وبلاگ</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="/Blogs">
+                                                        <i class="fa fa-angle-left"></i><span>مدیریت مطالب وبلاگ</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>*@
+                                        <li id="blogLi" class="menuitem"><a href="/fa/Blogs"><i class="fa fa-file icon"><b class="bg-info"></b></i><span>مدیریت مطالب وبلاگ</span></a></li>
+
+                                        @*<li id="proLi" class="menuitem"><a href="/users"><i class="fa fa-users icon"><b class="bg-danger"></b></i><span>مدیریت کاربران</span></a></li>*@
+                                        <li id="conLi" class="menuitem"><a href="/fa/ContactusForms"><i class="fa fa-users icon"><b class="bg-danger"></b></i><span>مدیریت فرم تماس با ما</span></a></li>
+                                        <li id="catLi" class="menuitem"><a href="/fa/Catalogs"><i class="fa fa-archive icon"><b class="bg-primary"></b></i><span>مدیریت کاتالوگ ها</span></a></li>
+                                        <li id="cerLi" class="menuitem"><a href="/fa/Certificates"><i class="fa fa-certificate icon"><b class="bg-danger"></b></i><span>مدیریت گواهینامه</span></a></li>
+                                        <li id="sliLi" class="menuitem"><a href="/fa/TextTypeItems/index/2f4d1d33-5566-48c8-bfdd-1d15f93f7898"><i class="fa fa-sliders icon"><b class="bg-warning"></b></i><span>مدیریت تصویر اسلاید داخلی</span></a></li>
+                                        <li id="slideLi" class="menuitem"><a href="/fa/Sliders/Index"><i class="fa fa-sliders icon"><b class="bg-danger"></b></i><span>مدیریت اسلاید ها</span></a></li>
+                                        <li id="proLi" class="menuitem">
+                                            <a href="#">
+                                                <i class="fa fa-sitemap icon"><b class="bg-primary"></b></i><span class="pull-right"><i class="fa fa-angle-down text"></i><i class="fa fa-angle-up text-active"></i></span><span>مدیریت محصولات</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="/fa/productgroups">
+                                                        <i class="fa fa-angle-left"></i><span>مدیریت گروه محصولات</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fa/products">
+                                                        <i class="fa fa-angle-left"></i><span>مدیریت محصولات</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li id="serviceLi" class="menuitem">
+                                            <a href="#">
+                                                <i class="fa fa-sitemap icon"><b class="bg-primary"></b></i><span class="pull-right"><i class="fa fa-angle-down text"></i><i class="fa fa-angle-up text-active"></i></span><span>مدیریت خدمات</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="/fa/services">
+                                                        <i class="fa fa-angle-left"></i><span>مدیریت خدمات</span>
+                                                    </a>
+                                                </li>
+                                                @*<li>
+                                                    <a href="/fa/serviceitems">
+                                                        <i class="fa fa-angle-left"></i><span>مدیریت جزییات خدمات</span>
+                                                    </a>
+                                                </li>*@
+                                            </ul>
+                                        </li>
+                                        <li id="galleryLi" class="menuitem">
+                                            <a href="#">
+                                                <i class="fa fa-image icon"><b class="bg-primary"></b></i><span class="pull-right"><i class="fa fa-angle-down text"></i><i class="fa fa-angle-up text-active"></i></span><span>مدیریت گالری</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="/fa/GalleryCategories">
+                                                        <i class="fa fa-angle-left"></i><span>مدیریت گروه گالری</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="/fa/GalleryImages">
+                                                        <i class="fa fa-angle-left"></i><span>مدیریت تصاویر گالری</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li id="textLi" class="menuitem">
+                                            <a href="#">
+                                                <i class="fa fa-sitemap icon"><b class="bg-primary"></b></i><span class="pull-right"><i class="fa fa-angle-down text"></i><i class="fa fa-angle-up text-active"></i></span><span>مدیریت متن ها</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="/fa/TextTypeItems/index/C8D76346-0406-4A38-BAF8-37AC9554C833">
+                                                        <i class="fa fa-angle-left"></i><span>مدیریت متن درباره شرکت صفحه اصلی </span>
+                                                    </a>
+                                                </li>
+                                                 <li>
+                                                    <a href="/fa/TextTypeItems/index/b45194ed-7970-4976-a2e4-8c81ece72547">
+                                                        <i class="fa fa-angle-left"></i><span>مدیریت متن فوتر </span>
+                                                    </a>
+                                                </li>
+	                                            <li>
+		                                            <a href="/fa/TextTypeItems/index/9892870D-53E3-4A39-AED2-238DEC57ECEA">
+			                                            <i class="fa fa-angle-left"></i><span>مدیریت متن صفحه درباره ما </span>
+		                                            </a>
+	                                            </li>
+	                                            <li>
+		                                            <a href="/fa/TextTypeItems/index/f19cdc32-c60d-498c-91b2-26d729738866">
+			                                            <i class="fa fa-angle-left"></i><span>مدیریت متن زیر اسلایدر </span>
+		                                            </a>
+	                                            </li>
+	                                            <li>
+		                                            <a href="/fa/TextTypeItems/index//BCD99D3C-5ACD-404A-9D37-98E07BABE021">
+			                                            <i class="fa fa-angle-left"></i><span>مدیریت اطلاعات تماس </span>
+		                                            </a>
+	                                            </li>
+                                            </ul>
+                                        </li>
+                                        
+                                    <li id="blogLi" class="menuitem">
+                                        <a href="#">
+                                            <i class="fa fa-sitemap icon"><b class="bg-primary"></b></i><span class="pull-right"><i class="fa fa-angle-down text"></i><i class="fa fa-angle-up text-active"></i></span><span>مشتریان</span>
+                                        </a>
+                                        <ul class="nav lt">
+                                            <li>
+                                                <a href="/fa/CustomerGroups">
+                                                    <i class="fa fa-angle-left"></i><span>مدیریت گروه مشتریان</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/fa/Customers">
+                                                    <i class="fa fa-angle-left"></i><span>مدیریت مشتریان</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                        <li id="newsLi" class="menuitem"><a href="/NewsLetters"><i class="fa fa-users icon"><b class="bg-danger"></b></i><span>مدیریت اعضای خبرنامه</span></a></li>
+
+                                        @*@{
+                                            if (User.Identity.IsAuthenticated)
+                                            {
+                                                var identity = (System.Security.Claims.ClaimsIdentity)User.Identity;
+                                                string role = identity.FindFirst(System.Security.Claims.ClaimTypes.Role).Value;
+                                                if (role == "Administrator")
+                                                {
+                                                <li id="blogLi" class="menuitem">
+                                                    <a href="#">
+                                                        <i class="fa fa-sitemap icon"><b class="bg-primary"></b></i><span class="pull-right"><i class="fa fa-angle-down text"></i><i class="fa fa-angle-up text-active"></i></span><span>وبلاگ</span>
+                                                    </a>
+                                                    <ul class="nav lt">
+                                                        <li>
+                                                            <a href="/BlogCategories">
+                                                                <i class="fa fa-angle-left"></i><span>مدیریت گروه وبلاگ</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/Blogs">
+                                                                <i class="fa fa-angle-left"></i><span>مدیریت مطالب وبلاگ</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li id="proLi" class="menuitem"><a href="/users"><i class="fa fa-users icon"><b class="bg-danger"></b></i><span>مدیریت کاربران</span></a></li>
+
+
+                                                <li id="blogLi" class="menuitem">
+                                                    <a href="#">
+                                                        <i class="fa fa-sitemap icon"><b class="bg-primary"></b></i><span class="pull-right"><i class="fa fa-angle-down text"></i><i class="fa fa-angle-up text-active"></i></span><span>صفحه اصلی</span>
+                                                    </a>
+                                                    <ul class="nav lt">
+                                                        <li>
+                                                            <a href="/TextItems/index/1">
+                                                                <i class="fa fa-angle-left"></i><span>مدیریت ویژگی ها</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/Blogs">
+                                                                <i class="fa fa-angle-left"></i><span>مدیریت مطالب وبلاگ</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                }
+                                                if (role == "Administrator" || role == "TourAdmin")
+                                                {
+                                                <li id="textLi" class="menuitem">
+                                                    <a href="#">
+                                                        <i class="fa fa-sitemap icon"><b class="bg-primary"></b></i><span class="pull-right"><i class="fa fa-angle-down text"></i><i class="fa fa-angle-up text-active"></i></span><span>مدیریت تورها</span>
+                                                    </a>
+                                                    <ul class="nav lt">
+                                                        <li>
+                                                            <a href="/Types/Index/dac5c81a-6e1c-4422-a58b-287ce4140bba">
+                                                                <i class="fa fa-angle-left"></i><span>مدیریت گروه های تور</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/Tours/index">
+                                                                <i class="fa fa-angle-left"></i><span>مدیریت تورها</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/TourHotels/index">
+                                                                <i class="fa fa-angle-left"></i><span>مدیریت هتل های تور</span>
+                                                            </a>
+                                                        </li>
+
+
+                                                    </ul>
+                                                </li>
+                                                }
+                                                if (role == "Administrator" || role == "HotelAdmin")
+                                                {
+                                                <li id="textLi" class="menuitem">
+                                                    <a href="#">
+                                                        <i class="fa fa-sitemap icon"><b class="bg-primary"></b></i><span class="pull-right"><i class="fa fa-angle-down text"></i><i class="fa fa-angle-up text-active"></i></span><span>مدیریت هتل ها</span>
+                                                    </a>
+                                                    <ul class="nav lt">
+                                                        <li>
+                                                            <a href="/hotels">
+                                                                <i class="fa fa-angle-left"></i><span>مدیریت هتل ها</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/Features">
+                                                                <i class="fa fa-angle-left"></i><span>مدیریت امکانات</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                    }
+                                                }
+                                            }*@
+                                        @*<li id="proLi" class="menuitem"><a href="/Products"><i class="fa fa-users icon"><b class="bg-danger"></b></i><span>مدیریت محصولات</span></a></li>
+                                            <li id="SliderLi" class="menuitem"><a href="/Sliders"><i class="fa fa-users icon"><b class="bg-danger"></b></i><span>مدیریت تصاویر اسلایدر</span></a></li>
+                                            <li id="NewsletterLi" class="menuitem"><a href="/Newsletters"><i class="fa fa-users icon"><b class="bg-danger"></b></i><span>مدیریت اعضای خبرنامه</span></a></li>*@
+
+
+
+                                    </ul>
+                                </nav>
+                                <!-- / nav -->
+                            </div>
+                        </section>
+
+                    </section>
+                </aside>
+                <!-- /.aside -->
+                <section id="content">
+                    <section class="vbox">
+                        <section class="scrollable padder" style="margin-top: 5px;">
+                            @RenderBody()
+                        </section>
+                    </section>
+                    <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a>
+                </section>
+            </section>
+        </section>
+    </section>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var URL = window.location.pathname;
+            if (URL.includes('Blogs')) {
+                $('.menuitem').removeClass('active');
+                $('#blogLi').addClass('active');
+            }
+
+            else if (URL.includes('/ContactusForms')) {
+                $('.menuitem').removeClass('active');
+                $('#conLi').addClass('active');
+            }
+
+            else if (URL.includes('/product')) {
+                $('.menuitem').removeClass('active');
+                $('#proLi').addClass('active');
+            }
+            else if (URL.includes('/Catalogs')) {
+                $('.menuitem').removeClass('active');
+                $('#catLi').addClass('active');
+            }
+            else if (URL.includes('/service')) {
+                $('.menuitem').removeClass('active');
+                $('#serviceLi').addClass('active');
+            } 
+            else if (URL.includes('/2f4d1d33')) {
+                $('.menuitem').removeClass('active');
+                $('#sliLi').addClass('active');
+            }
+            else if (URL.includes('/TextTypeItems')) {
+                $('.menuitem').removeClass('active');
+                $('#textLi').addClass('active');
+            } 
+            else if (URL.includes('/NewsLetters')) {
+                $('.menuitem').removeClass('active');
+                $('#newsLi').addClass('active');
+            }
+            else if (URL.includes('/Sliders')) {
+                $('.menuitem').removeClass('active');
+                $('#slideLi').addClass('active');
+            }
+            else if (URL.includes('/Gallery')) {
+                $('.menuitem').removeClass('active');
+                $('#galleryLi').addClass('active');
+            } 
+            else if (URL.includes('/Certificates')) {
+                $('.menuitem').removeClass('active');
+                $('#cerLi').addClass('active');
+            }
+            
+        });
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

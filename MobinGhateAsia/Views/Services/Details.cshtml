@@ -1,0 +1,74 @@
+﻿@using Models
+@model Models.ViewModels.ServiceDetailViewModel
+
+@{
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+    <!-- INNER PAGE BANNER -->
+    <div class="wt-bnr-inr overlay-wraper" style="background-image:url(@Model.Service.HeaderImageUrl);">
+        <div class="overlay-main bg-black" style="opacity:0.5;"></div>
+        <div class="container">
+            <div class="wt-bnr-inr-entry">
+                <h1 class="text-white">@Model.Service.TitleSrt</h1>
+            </div>
+        </div>
+    </div>
+
+
+<div class="bg-gray-light p-tb20">
+        <div class="container">
+            <ul class="wt-breadcrumb breadcrumb-style-1">
+                <li><a href="/@ViewContext.RouteData.Values["language"]">@Resources.Label.MenuHome</a></li>
+                 
+                <li>@Model.Service.TitleSrt</li>
+            </ul>
+        </div>
+    </div>
+    <!-- BREADCRUMB ROW END -->
+    <!-- SECTION CONTENT START -->
+    <div class="section-full p-t80 p-b50">
+
+        <!-- PRODUCT DETAILS -->
+	    <div class="container woo-entry">
+		    
+				
+				<div class="row">
+					<div class="portfolio-wrap mfp-gallery no-col-gap">
+						
+						@foreach (var image in Model.ServiceImages)
+						{
+							<div class="masonry-item col-lg-3 col-md-3 col-sm-6 col-xs-6">
+								<div class="wt-gallery-bx p-a15">
+									<div class="wt-thum-bx wt-img-overlay1 wt-img-effect zoom-slow">
+										<a href="javascript:void(0);">
+											<img src="@image.ImageUrl" alt="">
+										</a>
+										<div class="overlay-bx">
+											<div class="overlay-icon">
+												<a href="@image.ImageUrl" class="mfp-link">
+													<i class="fa fa-picture-o wt-icon-box-xs"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						}
+					</div>
+				</div>
+
+		    <div class="row m-b30">
+			    <div class="col-md-12 col-sm-12 body-product-content">
+				    <div class="wt-post-title ">
+					    <h2 class="post-title">@Model.Service.TitleSrt</h2>
+				    </div>
+
+				    <div class="wt-post-text">
+					    <p class="m-b10">@Html.Raw(Model.Service.BodySrt) </p>
+				    </div>
+
+			    </div>
+		    </div>
+	    </div>
+    </div>
+   

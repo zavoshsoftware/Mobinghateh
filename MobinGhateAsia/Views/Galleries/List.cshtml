@@ -1,0 +1,49 @@
+﻿@model Models.ViewModels.GalleryListViewModel
+@{
+    ViewBag.Title = @Resources.Label.TitleGalleryList;
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+<div class="wt-bnr-inr overlay-wraper" style="background-image:url(@Model.InnerSlide.ImageUrl);">
+    <div class="overlay-main bg-black" style="opacity:0.5;"></div>
+    <div class="container">
+        <div class="wt-bnr-inr-entry">
+            <h1 class="text-white">@Resources.Label.MenuGallery</h1>
+        </div>
+    </div>
+</div>
+
+<div class="bg-gray-light p-tb20">
+    <div class="container">
+        <ul class="wt-breadcrumb breadcrumb-style-1">
+            <li><a href="/@ViewContext.RouteData.Values["language"]">@Resources.Label.MenuHome</a></li>
+            <li>@Resources.Label.MenuGallery</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section-full p-t80 p-b50">
+    <div class="portfolio-wrap mfp-gallery no-col-gap clearfix">
+        <div class="container-fluid">
+            <div class="row">
+                @foreach (var gallery in Model.Galleries)
+                {
+                    <div class="masonry-item col-lg-4 col-md-6 col-sm-6">
+                        <div class="wt-box">
+                            <div class="wt-thum-bx wt-img-overlay2 wt-img-effect zoom">
+                                <img src="@gallery.ImageUrl" alt="@gallery.TitleSrt" height="300px" width="500px">
+                                <div class="wt-info-has p-a20">
+                                    <div class="wt-info p-tb10">
+                                        <h4 class="m-a0">@gallery.TitleSrt</h4>
+                                    </div>
+                                    <a href="/@ViewContext.RouteData.Values["language"]/gallery/@gallery.Id" class="site-button "><i class="fa fa-angle-double-left"></i>@Resources.Label.ReadMore </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

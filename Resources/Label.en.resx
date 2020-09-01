@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutGasso" xml:space="preserve">
+    <value>About Gasso</value>
+  </data>
+  <data name="AddressTitle" xml:space="preserve">
+    <value>Adress</value>
+  </data>
+  <data name="AdressDetail" xml:space="preserve">
+    <value>No 771, Street 11, ebne sina Blv, abas abad Industrial Park, khavaran 37 Km</value>
+  </data>
+  <data name="AfterSaleServices" xml:space="preserve">
+    <value>After Sale Services</value>
+  </data>
+  <data name="BestQuality" xml:space="preserve">
+    <value>Best quality</value>
+  </data>
+  <data name="CareerForm" xml:space="preserve">
+    <value>Career Form</value>
+  </data>
+  <data name="CellNumber" xml:space="preserve">
+    <value>CellNumber</value>
+  </data>
+  <data name="Certificates" xml:space="preserve">
+    <value>Certificates</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="CompanyServices" xml:space="preserve">
+    <value>Mobin ghate services</value>
+  </data>
+  <data name="CompanyServicesDesc" xml:space="preserve">
+    <value>more than 50 year services and production</value>
+  </data>
+  <data name="ContactInfo" xml:space="preserve">
+    <value>Contact Information</value>
+  </data>
+  <data name="CopyRights" xml:space="preserve">
+    <value>All Right Reserved. Mobin ghate 2017</value>
+  </data>
+  <data name="customer" xml:space="preserve">
+    <value>customer</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="DetailImages" xml:space="preserve">
+    <value>Detail Images</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="employee" xml:space="preserve">
+    <value>employee</value>
+  </data>
+  <data name="fax" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="garanty" xml:space="preserve">
+    <value>18 month warranty</value>
+  </data>
+  <data name="GassoCompany" xml:space="preserve">
+    <value>Gasso Company</value>
+  </data>
+  <data name="GassoServices" xml:space="preserve">
+    <value>Gasso Services</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="latestBlog" xml:space="preserve">
+    <value>latest Blogs</value>
+  </data>
+  <data name="LatestBlogDesc" xml:space="preserve">
+    <value>here is latest blog in our website blogs</value>
+  </data>
+  <data name="LatestNews" xml:space="preserve">
+    <value>Latest News</value>
+  </data>
+  <data name="LatestNewsDesc" xml:space="preserve">
+    <value>Follow newest article and gasso news from here</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="MenuAbout" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="MenuCareer" xml:space="preserve">
+    <value>Career</value>
+  </data>
+  <data name="MenuCatalog" xml:space="preserve">
+    <value>Catalog Download</value>
+  </data>
+  <data name="MenuContact" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="MenuGallery" xml:space="preserve">
+    <value>Gallery</value>
+  </data>
+  <data name="MenuHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="MenuNews" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="MenuProduct" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="MenuService" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="NewProduct" xml:space="preserve">
+    <value>Latest Products</value>
+  </data>
+  <data name="Newsletter" xml:space="preserve">
+    <value>Newsletter</value>
+  </data>
+  <data name="OtherService" xml:space="preserve">
+    <value>Other Services</value>
+  </data>
+  <data name="OurCustomer" xml:space="preserve">
+    <value>Our Customer</value>
+  </data>
+  <data name="OurCustomerDesc" xml:space="preserve">
+    <value>Follow mobinghate customer from here</value>
+  </data>
+  <data name="PhoneTitle" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="PopularLinks" xml:space="preserve">
+    <value>Popular Links</value>
+  </data>
+  <data name="ProjectProcess" xml:space="preserve">
+    <value>Proccess of mobinghate Project</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Read More</value>
+  </data>
+  <data name="RelatedProduct" xml:space="preserve">
+    <value>Related Product</value>
+  </data>
+  <data name="ShowProduct" xml:space="preserve">
+    <value>Show Product</value>
+  </data>
+  <data name="Slider1Desc" xml:space="preserve">
+    <value>در گروه صنعتی گازسو، نامی ایرانی با فعالیت بین المللی و اعتبار جهانی، بر این باوریم که مصرف کنندگان محصولات گازسو با استقبال روز افزونشان، تنها شایسته بهترین ها هستند،</value>
+  </data>
+  <data name="Slider1Title" xml:space="preserve">
+    <value>Gasso Company</value>
+  </data>
+  <data name="Slider2Desc" xml:space="preserve">
+    <value>شرکت گازسو با سال ها تجربه در زمینه تولید تجهیزات آشپزخانه های صنعتی، اکنون بزرگترین شرکت تولید کننده در این حوزه می باشد.</value>
+  </data>
+  <data name="Slider2Title" xml:space="preserve">
+    <value>Industrial kitchen equipment</value>
+  </data>
+  <data name="Slider3Desc" xml:space="preserve">
+    <value>شرکت گازسو به عنوان اولین و بزرگترین تولید کننده تجهیزات آشپزخانه صنعتی اکنون اقدام به تولید دستگاه های پخت نان کرده است.</value>
+  </data>
+  <data name="Slider3Title" xml:space="preserve">
+    <value>Bread Machine</value>
+  </data>
+  <data name="SliderMore" xml:space="preserve">
+    <value>More Information</value>
+  </data>
+  <data name="slogan1" xml:space="preserve">
+    <value>quality isn't destination, it's a route</value>
+  </data>
+  <data name="SocialNetwork" xml:space="preserve">
+    <value>Social Network</value>
+  </data>
+  <data name="Specefication" xml:space="preserve">
+    <value>Specefication</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="SubmitEmail" xml:space="preserve">
+    <value>Submit your Email address</value>
+  </data>
+  <data name="SubmitMessage" xml:space="preserve">
+    <value>Submit Message</value>
+  </data>
+  <data name="SubmitRequest" xml:space="preserve">
+    <value>Submit Request</value>
+  </data>
+  <data name="ThreeDView" xml:space="preserve">
+    <value>3D View</value>
+  </data>
+  <data name="TitleAbout" xml:space="preserve">
+    <value>About Us Gasso Company</value>
+  </data>
+  <data name="TitleCareer" xml:space="preserve">
+    <value>Career Gasso company</value>
+  </data>
+  <data name="TitleContact" xml:space="preserve">
+    <value>Contact us GASSO </value>
+  </data>
+  <data name="TitleGalleryList" xml:space="preserve">
+    <value>Gasso Gallery</value>
+  </data>
+  <data name="TitleNewsList" xml:space="preserve">
+    <value>Gasso News</value>
+  </data>
+  <data name="usefullLinks" xml:space="preserve">
+    <value>usefull Links</value>
+  </data>
+  <data name="ViewDetail" xml:space="preserve">
+    <value>View Detail</value>
+  </data>
+  <data name="Visit" xml:space="preserve">
+    <value>visit</value>
+  </data>
+  <data name="year" xml:space="preserve">
+    <value>year experience</value>
+  </data>
+  <data name="Zavosh" xml:space="preserve">
+    <value>Zavosh</value>
+  </data>
+</root>

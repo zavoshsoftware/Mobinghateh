@@ -1,0 +1,53 @@
+﻿@model Models.ViewModels.GalleryImageListViewModel
+@{
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+
+<div class="wt-bnr-inr overlay-wraper" style="background-image:url(@Model.InnerSlide.ImageUrl);">
+    <div class="overlay-main bg-black" style="opacity:0.5;"></div>
+    <div class="container">
+        <div class="wt-bnr-inr-entry">
+            <h1 class="text-white">@ViewBag.Title</h1>
+
+        </div>
+    </div>
+</div>
+<!-- BREADCRUMB ROW -->
+<div class="bg-gray-light p-tb20">
+    <div class="container">
+        <ul class="wt-breadcrumb breadcrumb-style-1">
+            <li><a href="/@ViewContext.RouteData.Values["language"]">@Resources.Label.MenuHome</a></li>
+            <li><a href="/@ViewContext.RouteData.Values["language"]/gallery">@Resources.Label.MenuGallery</a></li>
+            <li>@ViewBag.Title</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section-full p-t80 p-b50">
+    <div class="container">
+        <div class="row">
+            <div class="portfolio-wrap mfp-gallery no-col-gap">
+                @foreach (var galleryImage in Model.GalleryImages)
+                {
+                    <div class="masonry-item  col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                        <div class="wt-gallery-bx p-a15">
+                            <div class="wt-thum-bx wt-img-overlay1 wt-img-effect zoom-slow">
+                                <a href="javascript:void(0);">
+                                    <img src="@galleryImage.ImageUrl" alt="@galleryImage.TitleSrt">
+                                </a>
+                                <div class="overlay-bx">
+                                    <div class="overlay-icon">
+                                        <a href="@galleryImage.ImageUrl" class="mfp-link">
+                                            @*<i class="fa fa-picture-o wt-icon-box-xs"></i>*@
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

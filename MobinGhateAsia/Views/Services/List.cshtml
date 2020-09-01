@@ -1,0 +1,99 @@
+﻿@model  Models.ViewModels.ServiceListViewModel 
+@{
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+
+ <div class="page-content">
+
+    <!-- INNER PAGE BANNER -->
+    <div class="wt-bnr-inr overlay-wraper" style="background-image:url(@Model.InnerSlide.ImageUrl);">
+        <div class="overlay-main bg-black" style="opacity:0.5;"></div>
+        <div class="container">
+            <div class="wt-bnr-inr-entry">
+                <h1 class="text-white">@Resources.Label.GassoServices</h1>
+
+            </div>
+        </div>
+    </div>
+    <!-- INNER PAGE BANNER END -->
+    <!-- BREADCRUMB ROW -->
+    <div class="bg-gray-light p-tb20">
+        <div class="container">
+            <ul class="wt-breadcrumb breadcrumb-style-1">
+                <li><a href="/@ViewContext.RouteData.Values["language"]">@Resources.Label.MenuHome</a></li>
+                <li>@Resources.Label.GassoServices</li>
+
+            </ul>
+        </div>
+    </div>
+    <!-- BREADCRUMB ROW END -->
+    <!-- SECTION CONTENT START -->
+     <div class="section-full p-t40 p-b40">
+         <div class="container">
+
+             <!-- TITLE START -->
+             <div class="section-head">
+                 <h2 class="text-uppercase">@Model.ServiceText.TitleSrt
+                 </h2>
+                 <div class="wt-separator-outer">
+                     <div class="wt-separator style-square">
+                         <span class="separator-left bg-primary"></span>
+                         <span class="separator-right bg-primary"></span>
+                     </div>
+                 </div>  @Html.Raw(Model.ServiceText.BodySrt)
+                 <h2 class="text-uppercase">
+                     
+                     @Resources.Label.ProjectProcess
+                 </h2>
+                 <div class="wt-separator-outer">
+                     <div class="wt-separator style-square">
+                         <span class="separator-left bg-primary"></span>
+                         <span class="separator-right bg-primary"></span>
+                     </div>
+                 </div>
+             </div>
+             <!-- TITLE END -->
+             <!-- TOGGLE DEFOULT -->
+             <div class="section-content">
+                 <div class="wt-accordion acc-default" id="accordion1">
+                     <ol class="list-num-count">
+                         
+                       
+                        @foreach (var service in Model.Services)
+                        {
+                            <li>
+                                <div class="panel wt-panel">
+                                    <div class="acod-head">
+                                        <h6 class="acod-title">
+                                            <a data-toggle="collapse" href="#@service.Id">
+                                               @service.TitleSrt
+
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div id="@service.Id" class="acod-body collapse in">
+                                        
+                                        <div class="acod-content p-tb15">
+                                            <ul class="list-check-circle primary">
+                                                @foreach (var item in service.ServiceItems)
+                                                {
+                                                    <li>
+                                                        @item.TitleSrt
+                                                    </li>
+                                                }
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+
+                     </ol>
+                         </div>
+             </div>
+
+         </div>
+     </div>
+</div>
+

@@ -1,0 +1,91 @@
+﻿@using Models
+@model Models.ViewModels.ProductGroupListViewModel
+@{
+
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+<div class="page-content">
+
+    <!-- INNER PAGE BANNER -->
+    <div class="wt-bnr-inr overlay-wraper" style="background-image:url(@Model.InnerSlide.ImageUrl);">
+        <div class="overlay-main bg-black" style="opacity:0.5;"></div>
+        <div class="container">
+            <div class="wt-bnr-inr-entry">
+                <h1 class="text-white">@Model.CurrentProductGroup.TitleSrt</h1>
+
+            </div>
+        </div>
+    </div>
+    <!-- INNER PAGE BANNER END -->
+    <!-- BREADCRUMB ROW -->
+    <div class="bg-gray-light p-tb20">
+        <div class="container">
+            <ul class="wt-breadcrumb breadcrumb-style-1">
+                <li><a href="/@ViewContext.RouteData.Values["language"]">@Resources.Label.MenuHome</a></li>
+                <li><a href="/@ViewContext.RouteData.Values["language"]/productgroup">محصولات</a></li>
+                <li>@Model.CurrentProductGroup.TitleSrt</li>
+
+            </ul>
+        </div>
+    </div>
+    <!-- BREADCRUMB ROW END -->
+    <!-- SECTION CONTENT START -->
+    <div class="section-full p-t40 p-b40">
+        <div class="container">
+            <div class="section-content">
+
+                <!-- TITLE START -->
+                <div class="p-b10">
+                    <h2>@Model.CurrentProductGroup.TitleSrt</h2>
+                    <div class="text-right">@Html.Raw(Model.CurrentProductGroup.DescriptionSrt)</div>
+                    <div class="wt-separator-outer m-b30">
+                        <div class="wt-separator style-square">
+                            <span class="separator-left bg-primary"></span>
+                            <span class="separator-right bg-primary"></span>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- TITLE END -->
+
+                <div class="row">
+                    @foreach (ProductGroup productGroup in Model.ProductGroups)
+                    {
+                        <div class="col-md-3 col-sm-4 col-xs-6 col-xs-100pc m-b30">
+                            <div class="wt-box wt-product-box">
+                                <div class="wt-thum-bx wt-img-overlay1 wt-img-effect zoom">
+                                    <img src="@productGroup.ImageUrl" alt="@productGroup.TitleSrt" width="280px" height="280px">
+                                    <div class="overlay-bx">
+                                        <div class="overlay-icon">
+                                            <a href="/@ViewContext.RouteData.Values["language"]/product/@productGroup.Id">
+                                                <i class="fa fa-send wt-icon-box-xs"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wt-info  text-center">
+                                    <div class="p-a10 bg-white">
+                                        <h3 class="wt-title">
+                                            <a href="/@ViewContext.RouteData.Values["language"]/product/@productGroup.Id">@productGroup.TitleSrt</a>
+                                        </h3>
+                                        <div class="rating-bx">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <div class="p-t10">
+                                            <a class="site-button  m-r15" href="/@ViewContext.RouteData.Values["language"]/product/@productGroup.Id"><i class="fa fa-angle-double-left"></i>@Resources.Label.ShowProduct </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

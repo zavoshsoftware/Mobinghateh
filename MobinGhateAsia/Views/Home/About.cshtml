@@ -1,0 +1,94 @@
+﻿@model Models.ViewModels.AboutViewModel
+
+@{
+    ViewBag.Title = @Resources.Label.TitleAbout;
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+<div class="wt-bnr-inr overlay-wraper" style="background-image:url('/Assets/images/header.jpg');">
+	<div class="overlay-main bg-black" style="opacity:0.5;"></div>
+	<div class="container">
+		<div class="wt-bnr-inr-entry">
+			<h1 class="text-white">@Resources.Label.MenuAbout</h1>
+		</div>
+	</div>
+</div>
+
+<div class="bg-gray-light p-tb20">
+    <div class="container">
+        <ul class="wt-breadcrumb breadcrumb-style-1">
+            <li><a href="/">@Resources.Label.MenuHome</a></li>
+            <li>@Resources.Label.MenuAbout</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section-full p-t40 p-b40">
+    <div class="container">
+        <div class="section-content">
+
+            <!-- TITLE START -->
+            <div class="p-b10">
+                <h2>@Model.AboutCompanyText.TitleSrt</h2>
+                <div class="wt-separator-outer m-b30">
+                    <div class="wt-separator style-square">
+                        <span class="separator-left bg-primary"></span>
+                        <span class="separator-right bg-primary"></span>
+                    </div>
+                </div>   <div>
+            @Html.Raw(Model.AboutCompanyText.BodySrt)
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="section-full bg-gray p-t80 p-b50">
+    <div class="container">
+
+        <!-- IMAGE CAROUSEL START -->
+        <!-- TITLE START -->
+        <div class="section-head">
+            <h2 class="text-uppercase">@Resources.Label.Certificates</h2>
+            <div class="wt-separator-outer">
+                <div class="wt-separator style-square">
+                    <span class="separator-left bg-primary"></span>
+                    <span class="separator-right bg-primary"></span>
+                </div>
+            </div>
+        </div>
+        <!-- TITLE END -->
+        <!-- CAROUSEL -->
+        <div class="section-content">
+            <div class="owl-carousel img-carousel-content  owl-btn-vertical-center">
+                @foreach (var certificate in Model.Certificates)
+                {
+                    <div class="item">
+                        <div class="ow-carousel-entry">
+                            <div class="ow-entry-media wt-img-effect zoom-slow">
+                                <a href="javascript:void(0);">
+
+                                    <img src="@certificate.ImageUrl" />
+                                </a>
+                            </div>
+
+                            <div class="ow-entry-content">
+                                <div class="ow-entry-title"><a href="javascript:void(0);">@certificate.TitleSrt</a></div>
+                                <div class="ow-entry-text">
+                                    <p>
+                                       @certificate.CompanySrt
+                                    </p>
+                                </div>
+                                <div class="ow-entry-button"></div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

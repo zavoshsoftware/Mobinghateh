@@ -1,0 +1,142 @@
+﻿@model  Models.ViewModels.CareerViewModel
+@{
+    ViewBag.Title = @Resources.Label.TitleCareer;
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+
+<div class="page-content">
+
+    <!-- INNER PAGE BANNER -->
+    <div class="wt-bnr-inr overlay-wraper" style="background-image:url(@Model.InnerSlide.ImageUrl);">
+        <div class="overlay-main bg-black" style="opacity:0.5;"></div>
+        <div class="container">
+            <div class="wt-bnr-inr-entry">
+                <h1 class="text-white">@Resources.Label.MenuCareer</h1>
+
+            </div>
+        </div>
+    </div>
+    <!-- INNER PAGE BANNER END -->
+    <!-- BREADCRUMB ROW -->
+    <div class="bg-gray-light p-tb20">
+        <div class="container">
+            <ul class="wt-breadcrumb breadcrumb-style-1">
+                <li><a href="/">@Resources.Label.MenuHome</a></li>
+                <li>@Resources.Label.MenuCareer</li>
+
+            </ul>
+        </div>
+    </div>
+    <!-- BREADCRUMB ROW END -->
+    <!-- SECTION CONTENT START -->
+    <div class="section-full p-t40 p-b40">
+        <div class="container">
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="section-head">
+                            <h4 class="text-uppercase">@Resources.Label.CareerForm</h4>
+                            <div class="wt-separator-outer">
+                                <div class="wt-separator style-square">
+                                    <span class="separator-left bg-primary"></span>
+                                    <span class="separator-right bg-primary"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wt-box border-2">
+                            <form >
+                                <div class="alert alert-danger" id="errorDivQ"></div>
+                                <div class="alert alert-success" id="SuccessDivQ">@Resources.Message.SuccessNewsletter</div>
+                                <div class="form-group">
+                                    <label>@Resources.Label.FirstName</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                        <input type="text" id="firstName" class="form-control" placeholder="@Resources.Label.FirstName">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>@Resources.Label.LastName</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                        <input type="text" id="lastName" class="form-control" placeholder="@Resources.Label.LastName">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>@Resources.Label.CellNumber</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-mobile"></i></span>
+                                        <input type="text" id="cellNumber" class="form-control" placeholder="@Resources.Label.CellNumber">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>@Resources.Label.Email</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                        <input type="text" id="email" class="form-control" placeholder="@Resources.Label.Email">
+                                    </div>
+                                </div>
+                                <button class="site-button " type="button" id="btnSubmitCareer"><i class="fa fa-angle-double-left"></i> 
+                                @Resources.Label.SubmitRequest</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                         
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnSubmitCareer").click(function () {
+                var firstNameVal = $('#firstName').val();
+                var emailVal = $('#email').val();
+                var lastNameVal = $('#lastName').val();
+                var cellNumberVal = $('#cellNumber').val();
+
+                if (firstNameVal != "" && emailVal != "" && lastNameVal != "" && cellNumberVal != "") {
+                    $.ajax(
+                        {
+                            url: "/Careers/RequestPost",
+                            data: { firstName: firstNameVal, email: emailVal, lastName: lastNameVal, cellNumber:cellNumberVal },
+                            type: "GET"
+                        }).done(function (result) {
+                        if (result == 'true') {
+                            $('#errorDivQ').css('display', 'none');
+                            $('#SuccessDivQ').css('display', 'block');
+                        }
+                        else
+                        {
+                            if (result == "InvalidEmail") {
+                                $('#errorDivQ').css('display', 'block');
+                                $('#SuccessDivQ').css('display', 'none');
+                                $('#errorDivQ').html('@Resources.Message.InvalidEmail');
+                            }
+                                else if (result == "InvalidMobile") {
+                                $('#errorDivQ').css('display', 'block');
+                                $('#SuccessDivQ').css('display', 'none');
+                                $('#errorDivQ').html('@Resources.Message.InvalidCellNumber');
+                            }
+
+                        }
+                    });
+                }
+                else {
+                    $('#errorDivQ').css('display', 'block');
+                    $('#SuccessDivQ').css('display', 'none');
+                    $('#errorDivQ').html('@Resources.Message.CompeleteAllField');
+
+                }
+            });
+        });
+    </script>
+}

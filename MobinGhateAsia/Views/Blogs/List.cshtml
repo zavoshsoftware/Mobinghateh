@@ -1,0 +1,64 @@
+﻿@model Models.ViewModels.BlogListViewModel
+@{
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+<div class="wt-bnr-inr overlay-wraper" style="background-image:url('/Assets/images/header.jpg');">
+    <div class="overlay-main bg-black" style="opacity:0.5;"></div>
+    <div class="container">
+        <div class="wt-bnr-inr-entry">
+            <h1 class="text-white">@Resources.Label.MenuNews</h1>
+        </div>
+    </div>
+</div>
+
+<!-- BREADCRUMB ROW -->
+<div class="bg-gray-light p-tb20">
+    <div class="container">
+        <ul class="wt-breadcrumb breadcrumb-style-1">
+            <li><a href="/@ViewContext.RouteData.Values["language"]">@Resources.Label.MenuHome</a></li>
+            <li>@Resources.Label.MenuNews</li>
+        </ul>
+    </div>
+</div>
+
+<!-- SECTION CONTENT START -->
+    <div class="section-full p-t80 p-b50">
+        <div class="container">
+
+            @foreach (var blog in Model.Blogs)
+            {
+
+                <div class="blog-post blog-md date-style-1 clearfix">
+
+                    <div class="wt-post-media wt-img-effect zoom-slow">
+                        <a href="/@ViewContext.RouteData.Values["language"]/blog/@blog.Id"><img src="@blog.ImageUrl" alt=""></a>
+                    </div>
+                    <div class="wt-post-info">
+
+                        <div class="wt-post-title ">
+                            <h3 class="post-title"><a href="/@ViewContext.RouteData.Values["language"]/blog/@blog.Id">@blog.TitleSrt</a></h3>
+                        </div>
+                        <div class="wt-post-meta ">
+                            <ul>
+                                <li class="post-date"> <i class="fa fa-calendar"></i><strong>@blog.SubmitDate.ToShortDateString()</strong></li>
+                                <li class="post-comment"><i class="fa fa-user"></i> <a href="javascript:void(0);">@blog.VisitNumber</a> </li>
+                            </ul>
+                        </div>
+                        <div class="wt-post-text">
+                            <p>
+                            @blog.SummerySrt </p>
+                        </div>
+                        <div class="wt-post-readmore">
+                            <a href="/@ViewContext.RouteData.Values["language"]/blog/@blog.Id" title="READ MORE" rel="bookmark" class="site-button-link">
+                                @Resources.Label.ReadMore
+                                <i class="fa fa-angle-double-left"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <!-- SECTION CONTENT END -->
+

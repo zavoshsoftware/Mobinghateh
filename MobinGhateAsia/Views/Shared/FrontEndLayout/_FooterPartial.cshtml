@@ -1,0 +1,199 @@
+﻿@model Models.ViewModels._LayoutViewModel
+
+ <footer class="site-footer footer-light">
+	<!-- COLL-TO ACTION START -->
+	<!-- FOOTER BLOCKES START -->
+	<div class="footer-top overlay-wraper">
+		<div class="overlay-main bg-black" style="opacity:0;"></div>
+		<div class="container">
+			<div class="row">
+				<!-- ABOUT COMPANY -->
+				<div class="col-md-3 col-sm-6">
+					<div class="widget widget_about">
+						<h4 class="widget-title">@Resources.Label.MenuAbout</h4>
+						<p class="clear"></p>
+						<div class="logo-footer clearfix p-b15">
+							<a href="index.html"><img src="/assets/images/mobin/logo.png" width="230" height="67" alt="" /></a>
+						</div>
+						<p>
+@Model.Footer.FooterText.Summary1Srt						</p>
+					</div>
+				</div>
+				<!-- RESENT POST -->
+				<div class="col-md-3 col-sm-6">
+					<div class="widget recent-posts-entry-date">
+						<h4 class="widget-title">@Resources.Label.latestBlog</h4>
+						<p class="clear"></p>
+						<div class="widget-post-bx">
+							@foreach (var footerBlog in Model.FooterBlogs)
+							{
+									<div class="bdr-light-blue widget-post clearfix  bdr-b-1 m-b10 p-b10">
+										<div class="wt-post-date text-center text-uppercase text-white p-t5">
+											<strong>@footerBlog.SubmitDate.Day</strong>
+											<span>دی</span>
+										</div>
+										<div class="wt-post-info">
+											<div class="wt-post-header">
+												<h6 class="post-title"><a href="/fa/blog/@footerBlog.Id">@footerBlog.TitleSrt</a></h6>
+											</div>
+											<div class="wt-post-meta">
+												<ul>
+													<li class="post-author"><i class="fa fa-user"></i>@footerBlog.VisitNumber @Resources.Label.Visit</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+							}
+
+						</div>
+					</div>
+				</div>
+				<!-- USEFUL LINKS -->
+				<div class="col-md-3 col-sm-6">
+					<div class="widget widget_services">
+						<h4 class="widget-title">@Resources.Label.usefullLinks</h4>
+						<p class="clear"></p>
+						<ul>
+							<li><a href="/@ViewContext.RouteData.Values["language"]/about">@Resources.Label.MenuAbout</a></li>
+							<li><a href="#">@Resources.Label.MenuCatalog</a></li>
+							<li><a href="#">@Resources.Label.MenuProduct</a></li>
+							<li><a href="#">@Resources.Label.MenuService</a></li>
+							<li><a href="@ViewContext.RouteData.Values["language"]/contact">@Resources.Label.MenuContact</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- NEWSLETTER -->
+				<div class="col-md-3 col-sm-6">
+					<div class="widget widget_newsletter">
+						<h4 class="widget-title">@Resources.Label.Newsletter</h4>
+						<p class="clear"></p>
+						<div class="newsletter-bx">
+							<form role="search" method="post">
+								<div class="input-group">
+									<input name="news-letter" class="form-control" placeholder="ایمیل خود را وارد کنید" type="text">
+									<span class="input-group-btn">
+										<button type="submit" class="site-button"><i class="fa fa-paper-plane-o"></i></button>
+									</span>
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- SOCIAL LINKS -->
+					<div class="widget widget_social_inks">
+						<h4 class="widget-title">@Resources.Label.SocialNetwork</h4>
+						<p class="clear"></p>  <ul class="social-icons social-square social-darkest">
+							<li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
+							<li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
+							<li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
+							<li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
+							<li><a href="javascript:void(0);" class="fa fa-youtube"></a></li>
+							<li><a href="http://instagram.com/mobin.ghateh" class="fa fa-instagram"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row ">
+
+				<div class="col-md-3 col-sm-6  p-tb20">
+					<div class="wt-icon-box-wraper left  bdr-1 bdr-gray-dark p-tb15 p-lr10 clearfix">
+						<div class="icon-md text-primary">
+							<span class="flaticon-placeholder"></span>
+						</div>
+						<div class="icon-content">
+							<h5 class="wt-tilte text-uppercase m-b0">@Resources.Label.AddressTitle</h5>
+							<p>@Resources.Label.AdressDetail</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6  p-tb20 ">
+					<div class="wt-icon-box-wraper left  bdr-1 bdr-gray-dark p-tb15 p-lr10 clearfix ">
+						<div class="icon-md text-primary">
+							<span class="flaticon-smartphone"></span>
+						</div>
+						<div class="icon-content">
+							<h5 class="wt-tilte text-uppercase m-b0">@Resources.Label.PhoneTitle</h5>
+							<p class="m-b0 dirleft">+98 21 36423857</p>
+							<p class="dirleft">+98 21 36423858</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6  p-tb20">
+					<div class="wt-icon-box-wraper left  bdr-1 bdr-gray-dark p-tb15 p-lr10 clearfix">
+						<div class="icon-md text-primary">
+							<span class="flaticon-fax"></span>
+						</div>
+						<div class="icon-content">
+							<h5 class="wt-tilte text-uppercase m-b0">@Resources.Label.fax</h5>
+							<p class="m-b0 dirleft">FAX: +98 21 36423857</p>
+							<p class="dirleft">FAX: +98 21 36423857</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 p-tb20">
+					<div class="wt-icon-box-wraper left  bdr-1 bdr-gray-dark p-tb15 p-lr10 clearfix">
+						<div class="icon-md text-primary">
+							<span class="flaticon-email"></span>
+						</div>
+						<div class="icon-content">
+							<h5 class="wt-tilte text-uppercase m-b0">Email</h5>
+							<p class="m-b0">info@mobinghateh.com</p>
+							<p>ceo@mobinghateh.com</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- FOOTER COPYRIGHT -->
+	<div class="footer-bottom overlay-wraper">
+		<div class="overlay-main bg-black" style="opacity:0;"></div>
+		<div class="constrot-strip"></div>
+		<div class="container p-t30">
+			<div class="row">
+				<div class="wt-footer-bot-right">
+					<span class="copyrights-text">@Resources.Label.CopyRights</span>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+
+
+    <script src="~/Scripts/UI/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#btnNewsLetter").click(function () {
+                var NewsletterEmailval = $("#NewsletterEmail").val();
+                if (NewsletterEmailval !== "") {
+
+                    $.ajax(
+                        {
+                            url: "/Home/NewsLetter",
+                            data: { Email: NewsletterEmailval },
+                            type: "Get"
+                        }).done(function (result) {
+                            if (result === "true") {
+                                $("#SuccessDivN").css('display', 'block');
+                                $("#errorDivN").css('display', 'none');
+                            }
+                            else if (result === "InvalidEmail") {
+                                $("#SuccessDivN").css('display', 'none');
+                                $("#errorDivN").css('display', 'block');
+                                $("#errorDivN").html("@Resources.Message.InvalidEmail");
+                            }
+                        });
+                }
+                else {
+                    $("#SuccessDivN").css('display', 'none');
+                    $("#errorDivN").css('display', 'block');
+                    $("#errorDivN").html("@Resources.Message.EmailRequired");
+                }
+            });
+        });
+    </script>
+

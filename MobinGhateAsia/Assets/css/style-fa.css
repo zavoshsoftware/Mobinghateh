@@ -1,0 +1,182 @@
+﻿@font-face {
+    font-family: 'Iransans';
+    src: url(../fonts/IranSans/IRANSansWebFaNum.eot) format('embedded-opentype'), url(../fonts/IranSans/IRANSansWebFaNum.woff2) format('woff2'), url(../fonts/IranSans/IRANSansWebFaNum.woff) format('woff'), url(../fonts/IranSans/IRANSansWebFaNum.ttf) format('truetype');
+}
+
+body {
+}
+
+p, a, li, ul, input, span,h1,h2,h3,h4,h5,h6 {
+    font-family: iransans;
+}
+.logo-header, .site-footer .widget > .widget-title {
+    float: right;
+    text-align: right;
+}
+
+.header-nav .nav {
+    float: left;
+}
+.navbar-nav > li {
+    float: right;
+}
+
+.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
+    float: right;
+}
+
+.wt-icon-box-wraper.left .icon-md {
+    float: right;
+    margin-right: 0;
+    margin-left: 10px;
+
+}
+ .icon-content p {
+    text-align: right;
+    direction: rtl;
+}
+.icon-content p {
+    word-break: unset;
+}
+
+.icon-content .wt-title {
+    text-align: center;
+}
+
+.widget-title:before {
+    right: 0;
+   left : auto;
+}
+.widget-title:after {
+    right: 18px;
+    left: auto;
+}
+.site-footer p {
+    direction: rtl;
+    text-align: justify;
+}
+.recent-posts-entry-date .wt-post-date {
+    float: right;
+}
+.recent-posts-entry-date .wt-post-info {
+    margin-left: 0;
+    margin-right: 70px;
+}
+.widget_services ul li {
+    text-align: right;
+}
+    .widget_services ul li:before {
+        left: auto;
+        right: 0;
+        content: "\f104";
+    }
+
+.newsletter-bx .input-group {
+    direction: rtl;
+}
+.input-group .form-control {
+    float: right;
+}
+.wt-icon-box-wraper .wt-tilte {
+    direction: rtl;
+}
+
+.dirleft {
+    direction: ltr;
+}
+
+.copyrights-text {
+    direction: rtl;
+}
+
+.constrot-strip {
+    background-image: none;
+}
+
+.wt-breadcrumb {
+    direction: rtl;
+    text-align: right;
+}
+.breadcrumb-style-1 li:after {
+    margin-right: 7px;
+    margin-left: 0;
+}
+
+.woo-entry .body-product-content {
+    direction: rtl;
+    text-align: right;
+}
+.woo-entry h3, .woo-entry .wt-separator-outer {
+    direction: rtl;
+    text-align: right;
+}
+
+.section-content .p-b10 h2, .section-content .p-b10 {
+    direction: rtl;
+    text-align: right;
+}
+
+.wt-bnr-inr-entry h1 {
+    text-align: right;
+    direction: rtl;
+}
+
+.section-head {
+    direction: rtl;
+}
+
+.ow-entry-title, .ow-entry-text p {
+    text-align: right;
+    direction: rtl;
+}
+
+.wt-box {
+    direction: rtl;
+}
+
+.icon-content  {
+   
+    font-family: Iransans;
+}
+
+.icon-content p {
+    text-align: center;
+    font-family: Iransans;
+}
+
+#errorDivC, #SuccessDivC {
+    display: none;
+}
+
+.dirltr {
+    direction:ltr;
+}
+.site-button,textarea {
+    font-family: iransans;
+}
+
+.wt-post-title h3, .wt-post-text p {
+    text-align: right;
+    direction: rtl;
+}
+/*.header-nav .nav {
+    width: 100%;
+}*/
+
+.navbar-toggle {
+    float: left;
+}
+
+.header-nav .nav > li .sub-menu li a {
+    text-align: right;
+    direction: rtl;
+}
+
+.post-title, .wt-post-meta {
+    text-align: right;
+    direction: rtl;
+}
+
+.client-logo img {
+    height: auto;
+}

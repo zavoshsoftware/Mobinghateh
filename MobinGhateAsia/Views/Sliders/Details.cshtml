@@ -1,0 +1,115 @@
+﻿@model Models.Slider
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/BackEndLayout/_BackEndLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Slider</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TitleEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TitleEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Summary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Summary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SummaryEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SummaryEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkTitleEn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkTitleEn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Priority)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Priority)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDelete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDelete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubmitDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubmitDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeleteDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeleteDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

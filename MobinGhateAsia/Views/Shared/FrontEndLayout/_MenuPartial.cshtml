@@ -1,0 +1,38 @@
+﻿@model Models.ViewModels._LayoutViewModel
+    
+<div class="header-nav navbar-collapse collapse ">
+	<ul class=" nav navbar-nav">
+		<li class="active"><a href="/">@Resources.Label.MenuHome</a></li>
+		<li>
+			<a href="javascript:;">@Resources.Label.MenuProduct<i class="fa fa-chevron-down"></i></a>
+			<ul class="sub-menu">
+			@foreach (var menu in Model.MenuProductGroupViewModel)
+			{
+				<li><a href="#">@menu.ParentProductGroup.TitleSrt</a>
+				
+					<ul class="sub-menu">
+						@foreach (var childProductGroup in menu.ChildProductGroups)
+						{
+								<li><a href="/@ViewContext.RouteData.Values["language"]/product/@childProductGroup.Id">@childProductGroup.TitleSrt</a></li>
+						}
+					</ul>
+				</li>
+			}
+				 
+			</ul>
+		</li>
+		<li>
+			<a href="javascript:;">@Resources.Label.MenuService<i class="fa fa-chevron-down"></i></a>
+			<ul class="sub-menu">
+				@foreach (var service in Model.Services)
+				{
+						<li><a href="/@ViewContext.RouteData.Values["language"]/service/@service.Id">@service.TitleSrt</a></li>
+
+				}
+			</ul>
+		</li>
+		<li><a href="/@ViewContext.RouteData.Values["language"]/about">@Resources.Label.MenuAbout</a></li>
+		<li><a href="/@ViewContext.RouteData.Values["language"]/contact">@Resources.Label.MenuContact</a></li>
+
+	</ul>
+</div>

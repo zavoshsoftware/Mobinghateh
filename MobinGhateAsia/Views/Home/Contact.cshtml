@@ -1,0 +1,200 @@
+﻿@model Models.ViewModels.ContactViewModel
+
+@{
+    ViewBag.Title = @Resources.Label.TitleContact;
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+<div class="wt-bnr-inr overlay-wraper" style="background-image:url('/Assets/images/header.jpg');">
+    <div class="overlay-main bg-black" style="opacity:0.5;"></div>
+    <div class="container">
+        <div class="wt-bnr-inr-entry">
+            <h1 class="text-white">@Resources.Label.MenuContact</h1>
+
+        </div>
+    </div>
+</div>
+<!-- BREADCRUMB ROW -->
+<div class="bg-gray-light p-tb20">
+    <div class="container">
+        <ul class="wt-breadcrumb breadcrumb-style-1">
+            <li><a href="/">@Resources.Label.MenuHome</a></li>
+            <li>@Resources.Label.MenuContact</li>
+        </ul>
+    </div>
+</div>
+<!-- BREADCRUMB ROW END -->
+<!-- SECTION CONTENTG START -->
+<div class="section-full p-t80 p-b50">
+    <div class="container">
+
+        <div class="section-content ">
+            <div class="row">
+                <div class="wt-box col-md-12">
+                    <h4 class="text-uppercase">@Resources.Label.ContactInfo</h4>
+                    <div class="wt-separator-outer m-b30">
+                        <div class="wt-separator style-square">
+                            <span class="separator-left bg-primary"></span>
+                            <span class="separator-right bg-primary"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-3 col-sm-12 m-b30">
+                            <div class="wt-icon-box-wraper center p-a30 bdr-2 bdr-gray-light">
+                                <div class="wt-icon-box-sm bg-primary m-b20"><span class="icon-cell"><i class="fa fa-phone"></i></span></div>
+                                <div class="icon-content phone-items">
+                                    <h5>@Model.Footer.PhoneText.TitleSrt</h5>
+                                    @Html.Raw(Model.Footer.PhoneText.BodySrt) 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12 m-b30">
+                            <div class="wt-icon-box-wraper center p-a30 bdr-2 bdr-gray-light">
+                                <div class="wt-icon-box-sm bg-primary m-b20"><span class="icon-cell"><i class="fa fa-envelope"></i></span></div>
+                                <div class="icon-content">
+                                    <h5>@Model.Footer.EmailText.TitleSrt</h5>
+                                    @Html.Raw(Model.Footer.EmailText.BodySrt) 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12 m-b30">
+                            <div class="wt-icon-box-wraper center p-a30 bdr-2 bdr-gray-light">
+                                <div class="wt-icon-box-sm bg-primary m-b20"><span class="icon-cell"><i class="fa fa-fax"></i></span></div>
+                                <div class="icon-content">
+                                    <h5>@Model.Footer.FaxText.TitleSrt</h5>
+                                    @Html.Raw(Model.Footer.FaxText.BodySrt) 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12 m-b30">
+                            <div class="wt-icon-box-wraper center p-a30 bdr-2 bdr-gray-light">
+                                <div class="wt-icon-box-sm bg-primary m-b20"><span class="icon-cell"><i class="fa fa-map-marker"></i></span></div>
+                                <div class="icon-content">
+                                    <h5>@Model.Footer.AddressText.TitleSrt</h5>
+                                    @Html.Raw(Model.Footer.AddressText.BodySrt)    </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-content m-b50">
+            <div class="row">
+
+
+
+                <!-- CONTACT FORM-->
+                <div class="wt-box col-md-6">
+                    <h4 class="text-uppercase">@Resources.Label.MenuContact </h4>
+                    <div class="wt-separator-outer m-b30">
+                        <div class="wt-separator style-square">
+                            <span class="separator-left bg-primary"></span>
+                            <span class="separator-right bg-primary"></span>
+                        </div>
+                    </div>
+
+                    <div class="cons-contact-form">
+                        <div class="alert alert-danger" id="errorDivC"></div>
+                        <div class="alert alert-success" id="SuccessDivC">@Resources.Message.SuccessNewsletter</div>
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                        <input name="username" type="text" id="fullname" required class="form-control" placeholder="@Resources.Label.FirstName">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                        <input name="email" type="text" class="form-control" id="email" required placeholder="@Resources.Label.Email">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon v-align-m"><i class="fa fa-pencil"></i></span>
+                                        <textarea name="message" rows="4" class="form-control" id="message" required placeholder="@Resources.Label.Message"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 text-right">
+                                @*<input id="btnSubmitMessage" type="button" value="click" />*@
+                                <button id="btnSubmitMessage" type="button"  class="site-button  m-r15"><i class="fa fa-angle-double-left"></i>@Resources.Label.SubmitMessage</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- LOCATION BLOCK-->
+                <div class="wt-box col-md-6">
+                    <h4 class="text-uppercase">@Resources.Label.Location</h4>
+                    <div class="wt-separator-outer m-b30">
+                        <div class="wt-separator style-square">
+                            <span class="separator-left bg-primary"></span>
+                            <span class="separator-right bg-primary"></span>
+                        </div>
+                    </div>
+                    <div class="gmap-outline m-b30">
+                        <div id="gmap_canvas" class="google-map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnSubmitMessage").click(function () {
+               
+                var fullnameVal = $("#fullname").val();
+                var emailVal = $("#email").val();
+                var messageVal = $("#message").val();
+                if (fullnameVal != "" && emailVal != "" && messageVal != "") {
+                    $.ajax(
+                        {
+                            url: "/ContactusForms/RequestPost",
+                            data: { fullname : fullnameVal, email : emailVal, message : messageVal },
+                            type: "GET"
+                        }).done(function (result) {
+                            if (result == "true") {
+                                $('#errorDivC').css('display', 'none');
+                                $('#SuccessDivC').css('display', 'block');
+                            }
+                            else if (result == "InvalidEmail") {
+                                $('#errorDivC').css('display', 'block');
+                                $('#SuccessDivC').css('display', 'none');
+                                $('#errorDivC').html('@Resources.Message.InvalidEmail');
+                            }
+                        });
+
+                }
+                else {
+                    $('#SuccessDivC').css('display', 'none');
+                    $('#errorDivC').html('@Resources.Message.CompeleteAllField');
+                    $('#errorDivC').css('display', 'block');
+                }
+            });
+
+        });
+    </script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyA-BaukamEwu8V8AKUROKmzsfTkW9-qgWY"></script> 
+
+    <script src="~/Scripts/UI/map.script.js"></script>
+}

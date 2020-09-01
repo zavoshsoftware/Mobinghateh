@@ -1,0 +1,51 @@
+﻿@model Models.ViewModels.CatalogListViewModel
+@{
+ 
+    Layout = "~/Views/Shared/FrontEndLayout/_FrontEndLayout.cshtml";
+}
+
+<div class="wt-bnr-inr overlay-wraper" style="background-image:url(/images/mobinghate.jpg);">
+    <div class="overlay-main bg-black" style="opacity:0.5;"></div>
+    <div class="container">
+        <div class="wt-bnr-inr-entry">
+            <h1 class="text-white">@Resources.Label.MenuCatalog</h1>
+
+        </div>
+    </div>
+</div>
+<!-- BREADCRUMB ROW -->
+<div class="bg-gray-light p-tb20">
+    <div class="container">
+        <ul class="wt-breadcrumb breadcrumb-style-1">
+            <li><a href="/@ViewContext.RouteData.Values["language"]">@Resources.Label.MenuHome</a></li>
+            <li>@Resources.Label.MenuCatalog</li>
+        </ul>
+    </div>
+</div>
+<div class="section-full p-t80 p-b50">
+    <div class="container">
+
+        @foreach (var catalog in Model.Catalogs)
+        {
+            <div class="blog-post blog-md date-style-1 clearfix">
+                <div class="wt-post-info catalog-list">
+                    <div class="wt-post-title ">
+                        <h3 class="post-title">@catalog.Title</h3>
+                    </div>
+                    <div class="wt-post-meta ">
+                        <ul>
+                            <li class="post-date"> <i class="fa fa-calendar"></i><strong>@catalog.SubmitDate.ToShortDateString()</strong></li>
+                        </ul>
+                    </div>
+                    <div class="wt-post-text">
+                        <p>@Html.Raw(@catalog.Description)</p>
+                    </div>
+                    <div class="wt-post-readmore">
+                        @*<a href="#" title="READ MORE" rel="bookmark" class="site-button-link">دانلود <i class="fa fa-angle-double-left"></i></a>*@
+                        @Html.ActionLink(Resources.Label.Download, "DownloadFile", new { id = catalog.Id }, new { @class = "site-button-link" })
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
