@@ -12,12 +12,13 @@ using Models.ViewModels;
 
 namespace MobinGhateAsia.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class CatalogsController : Controller
     {
         private DatabaseContext db = new DatabaseContext();
 
         // GET: Catalogs
-        [Route("Catalogs")]
+        //[Route("Catalogs")]
         public ActionResult Index()
         {
             return View(db.Catalogs.Where(a => a.IsDelete == false).OrderByDescending(a => a.SubmitDate).ToList());

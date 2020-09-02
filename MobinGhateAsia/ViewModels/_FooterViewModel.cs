@@ -15,5 +15,6 @@ namespace Models.ViewModels
         public TextTypeItem FaxText { get; set; }
         public TextTypeItem EmailText { get; set; }
         public string ZavoshLink { get; set; }
+        public Catalog Catalog { get; set; }
     }
 }

@@ -55,11 +55,15 @@ namespace Helpers
                 PhoneText = ReternFooterText("638e0195-568f-4df3-ad0a-c179cfebc409"),
                 FaxText = ReternFooterText("9169d906-4894-4386-b1ee-321a3fbdd80b"),
                 EmailText = ReternFooterText("ad3f9a5f-7202-406a-b0b7-91672366c3ac"),
-                ZavoshLink = GetFooterLink()
+                ZavoshLink = GetFooterLink(),
+                Catalog = ReturnCatalog()
             };
             return footer;
         }
-
+        public Catalog ReturnCatalog()
+        {
+            return db.Catalogs.FirstOrDefault();
+        }
         public string GetFooterLink()
         {
             string url = HttpContext.Current.Request.Url.PathAndQuery;
