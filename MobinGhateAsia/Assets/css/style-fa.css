@@ -13,7 +13,11 @@ p, a, li, ul, input, span,h1,h2,h3,h4,h5,h6 {
     float: right;
     text-align: right;
 }
-
+.alert {
+    font-family: Iransans;
+    direction: rtl;
+    text-align: right;
+}
 .header-nav .nav {
     float: left;
 }

@@ -13,7 +13,7 @@ $(document).ready(function () {
         $('#iran-flag').css('margin', '3px');
         $('#us-flag').css('margin', '3px');
         document.getElementById('style-rtl').disabled = false;
-        document.getElementById('bootstrap-rtl').disabled = false;
+        //document.getElementById('bootstrap-rtl').disabled = false;
         //document.getElementById('ltrStyle').disabled = true;
         //document.getElementById('ltrStyle2').disabled = true;
 

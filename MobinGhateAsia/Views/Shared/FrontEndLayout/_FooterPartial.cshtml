@@ -55,7 +55,7 @@
 						<p class="clear"></p>
 						<ul>
 							<li><a href="/@ViewContext.RouteData.Values["language"]/about">@Resources.Label.MenuAbout</a></li>
-							<li><a href="#">@Resources.Label.MenuCatalog</a></li>
+							@*<li><a href="#">@Resources.Label.MenuCatalog</a></li>*@
 							<li><a href="#">@Resources.Label.MenuProduct</a></li>
 							<li><a href="#">@Resources.Label.MenuService</a></li>
 							<li><a href="@ViewContext.RouteData.Values["language"]/contact">@Resources.Label.MenuContact</a></li>
@@ -68,14 +68,16 @@
 						<h4 class="widget-title">@Resources.Label.Newsletter</h4>
 						<p class="clear"></p>
 						<div class="newsletter-bx">
-							<form role="search" method="post">
+                            <div class="alert alert-danger" id="errorDivC"></div>
+                            <div class="alert alert-success" id="SuccessDivC">@Resources.Message.SuccessNewsletter</div>
+							<div>
 								<div class="input-group">
-									<input name="news-letter" class="form-control" placeholder="ایمیل خود را وارد کنید" type="text">
+									<input name="news-letter" class="form-control" placeholder="ایمیل خود را وارد کنید" type="text" id="newsLetterEmail">
 									<span class="input-group-btn">
-										<button type="submit" class="site-button"><i class="fa fa-paper-plane-o"></i></button>
+										<button type="button" class="site-button" onclick="SubmitNewsLetter();"><i class="fa fa-paper-plane-o"></i></button>
 									</span>
 								</div>
-							</form>
+							</div>
 						</div>
 					</div>
 					<!-- SOCIAL LINKS -->

@@ -133,9 +133,10 @@ namespace MobinGhateAsia.Controllers
         }
 
         [AllowAnonymous]
-        public ActionResult NewsLetter(string Email)
+        [HttpPost]
+        public ActionResult RequestPostNewsLetter(string email)
         {
-            bool isEmail = Regex.IsMatch(Email, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
+            bool isEmail = Regex.IsMatch(email, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
 
             if (!isEmail)
             {
@@ -143,7 +144,7 @@ namespace MobinGhateAsia.Controllers
             }
             else
             {
-                InsertNewsletter(Email);
+                InsertNewsletter(email);
                 return Json("true", JsonRequestBehavior.AllowGet);
             }
         }
@@ -161,5 +162,7 @@ namespace MobinGhateAsia.Controllers
             db.NewsLetters.Add(nl);
             db.SaveChanges();
         }
+
+
     }
 }

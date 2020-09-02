@@ -237,7 +237,35 @@
 			}
 		}); /*ready*/
 	</script>
+    <script>
+        function SubmitNewsLetter() {
+            var emailVal = $("#newsLetterEmail").val();
+            if (emailVal != "") {
+                    $.ajax(
+                        {
+                            url: "/fa/Home/RequestPostNewsLetter",
+                            data: { email: emailVal },
+                            type: "POST"
+                        }).done(function (result) {
+                            if (result == "true") {
+                                $('#errorDivC').css('display', 'none');
+                                $('#SuccessDivC').css('display', 'block');
+                            }
+                            else if (result == "InvalidEmail") {
+                                $('#errorDivC').css('display', 'block');
+                                $('#SuccessDivC').css('display', 'none');
+                                $('#errorDivC').html('@Resources.Message.InvalidEmail');
+                            }
+                        });
 
+                }
+                else {
+                    $('#SuccessDivC').css('display', 'none');
+                    $('#errorDivC').html('@Resources.Message.CompeleteAllField');
+                    $('#errorDivC').css('display', 'block');
+                }
+        }
+    </script>
 
 
 

@@ -94,6 +94,7 @@ namespace MobinGhateAsia.Controllers
         }
 
         [AllowAnonymous]
+        [HttpPost]
         public ActionResult RequestPost(string fullname, string email, string message)
         {
             bool isEmail = Regex.IsMatch(email, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);

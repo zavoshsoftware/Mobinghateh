@@ -130,7 +130,7 @@
 
                             <div class="col-md-12 text-right">
                                 @*<input id="btnSubmitMessage" type="button" value="click" />*@
-                                <button id="btnSubmitMessage" type="button"  class="site-button  m-r15"><i class="fa fa-angle-double-left"></i>@Resources.Label.SubmitMessage</button>
+                                <button id="btnSubmitMessage" type="button"  class="site-button  m-r15" onclick="SubmitComment();"><i class="fa fa-angle-double-left"></i>@Resources.Label.SubmitMessage</button>
                             </div>
 
                         </div>
@@ -160,9 +160,38 @@
 @section scripts
 {
     <script type="text/javascript">
-        $(document).ready(function () {
+        function SubmitComment()
+        {
+              var fullnameVal = $("#fullname").val();
+                var emailVal = $("#email").val();
+                var messageVal = $("#message").val();
+                if (fullnameVal != "" && emailVal != "" && messageVal != "") {
+                    $.ajax(
+                        {
+                            url: "/fa/ContactusForms/RequestPost",
+                            data: { fullname: fullnameVal, email: emailVal, message: messageVal },
+                            type: "POST"
+                        }).done(function (result) {
+                            if (result == "true") {
+                                $('#errorDivC').css('display', 'none');
+                                $('#SuccessDivC').css('display', 'block');
+                            }
+                            else if (result == "InvalidEmail") {
+                                $('#errorDivC').css('display', 'block');
+                                $('#SuccessDivC').css('display', 'none');
+                                $('#errorDivC').html('@Resources.Message.InvalidEmail');
+                            }
+                        });
+
+                }
+                else {
+                    $('#SuccessDivC').css('display', 'none');
+                    $('#errorDivC').html('@Resources.Message.CompeleteAllField');
+                    $('#errorDivC').css('display', 'block');
+                }
+        }
+        @*$(document).ready(function () {
             $("#btnSubmitMessage").click(function () {
-               
                 var fullnameVal = $("#fullname").val();
                 var emailVal = $("#email").val();
                 var messageVal = $("#message").val();
@@ -170,8 +199,8 @@
                     $.ajax(
                         {
                             url: "/ContactusForms/RequestPost",
-                            data: { fullname : fullnameVal, email : emailVal, message : messageVal },
-                            type: "GET"
+                            data: { fullname: fullnameVal, email: emailVal, message: messageVal },
+                            type: "POST"
                         }).done(function (result) {
                             if (result == "true") {
                                 $('#errorDivC').css('display', 'none');
@@ -192,8 +221,8 @@
                 }
             });
 
-        });
-    </script>
+        });*@
+</script>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyA-BaukamEwu8V8AKUROKmzsfTkW9-qgWY"></script> 
 
     <script src="~/Scripts/UI/map.script.js"></script>

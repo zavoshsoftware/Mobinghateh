@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutGasso" xml:space="preserve">
-    <value>About Gasso</value>
+    <value>About MobinGhateAsia</value>
   </data>
   <data name="AddressTitle" xml:space="preserve">
     <value>Adress</value>
@@ -184,10 +184,10 @@
     <value>18 month warranty</value>
   </data>
   <data name="GassoCompany" xml:space="preserve">
-    <value>Gasso Company</value>
+    <value>MobinGhateAsia Company</value>
   </data>
   <data name="GassoServices" xml:space="preserve">
-    <value>Gasso Services</value>
+    <value>MobinGhateAsia Services</value>
   </data>
   <data name="LastName" xml:space="preserve">
     <value>Last Name</value>
@@ -316,19 +316,19 @@
     <value>3D View</value>
   </data>
   <data name="TitleAbout" xml:space="preserve">
-    <value>About Us Gasso Company</value>
+    <value>About Us MobinGhateAsia Company</value>
   </data>
   <data name="TitleCareer" xml:space="preserve">
-    <value>Career Gasso company</value>
+    <value>Career MobinGhateAsia company</value>
   </data>
   <data name="TitleContact" xml:space="preserve">
-    <value>Contact us GASSO </value>
+    <value>Contact us MobinGhateAsia</value>
   </data>
   <data name="TitleGalleryList" xml:space="preserve">
-    <value>Gasso Gallery</value>
+    <value>MobinGhateAsia Gallery</value>
   </data>
   <data name="TitleNewsList" xml:space="preserve">
-    <value>Gasso News</value>
+    <value>MobinGhateAsia News</value>
   </data>
   <data name="usefullLinks" xml:space="preserve">
     <value>usefull Links</value>

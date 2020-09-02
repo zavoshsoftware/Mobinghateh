@@ -60,7 +60,7 @@
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Kendo.Mvc">
-      <HintPath>..\..\GassoCo\GassoCo\bin\Kendo.Mvc.dll</HintPath>
+      <HintPath>..\..\..\..\Documents\Visual Studio 2017\WorkSpaces\Bektash_TFS\Bektash 2017\Bektash\Bektash\bin\Kendo.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
@@ -175,6 +175,7 @@
     <Content Include="Assets\images\about-pic2.jpg" />
     <Content Include="Assets\images\add\pic1.jpg" />
     <Content Include="Assets\images\add\pic2.jpg" />
+    <Content Include="Assets\images\avatar.png" />
     <Content Include="Assets\images\background\bg-4.png" />
     <Content Include="Assets\images\background\bg-5.jpg" />
     <Content Include="Assets\images\background\bg-6.jpg" />
@@ -10496,6 +10497,7 @@
     <Content Include="Content\UI\style-fa.css" />
     <Content Include="Content\UI\style.css" />
     <Content Include="Content\UI\switcher.css" />
+    <Content Include="fonts\fontAwesome\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="index-2.html" />
     <Content Include="Scripts\AdminJS\app.v2.js" />
@@ -10515,6 +10517,10 @@
     <Content Include="CodeTemplates\MvcView\Imports.include.t4" />
     <Content Include="CodeTemplates\MvcView\List.cs.t4" />
     <Content Include="CodeTemplates\MvcView\ModelMetadataFunctions.cs.include.t4" />
+    <Content Include="fonts\fontAwesome\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontAwesome\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontAwesome\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontAwesome\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
