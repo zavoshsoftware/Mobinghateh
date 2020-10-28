@@ -178,7 +178,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to © 2018 تمامی حقوق این وب سایت متعلق به شرکت مبین قطعه آسیا می باشد. طراحی وب سایت: زاوش.
+        ///   Looks up a localized string similar to تمامی حقوق این وب سایت متعلق به شرکت مبین قطعه آسیا می باشد. طراحی وب سایت: .
         /// </summary>
         public static string CopyRights {
             get {
@@ -507,6 +507,15 @@ namespace Resources {
         public static string RelatedProduct {
             get {
                 return ResourceManager.GetString("RelatedProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to روابط عمومی و فروش.
+        /// </summary>
+        public static string Sale {
+            get {
+                return ResourceManager.GetString("Sale", resourceCulture);
             }
         }
         

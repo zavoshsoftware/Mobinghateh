@@ -157,7 +157,7 @@
     <value>اطلاعات تماس</value>
   </data>
   <data name="CopyRights" xml:space="preserve">
-    <value>© 2018 تمامی حقوق این وب سایت متعلق به شرکت مبین قطعه آسیا می باشد. طراحی وب سایت: زاوش</value>
+    <value>تمامی حقوق این وب سایت متعلق به شرکت مبین قطعه آسیا می باشد. طراحی وب سایت: </value>
   </data>
   <data name="customer" xml:space="preserve">
     <value>مشتری راضی</value>
@@ -329,5 +329,8 @@
   </data>
   <data name="Zavosh" xml:space="preserve">
     <value>زاوش</value>
+  </data>
+  <data name="Sale" xml:space="preserve">
+    <value>روابط عمومی و فروش</value>
   </data>
 </root>
