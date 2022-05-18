@@ -34,9 +34,9 @@
         <div class="container">
             <div class="section-content">
 
-                <!-- TITLE START -->
                 <div class="p-b10">
-                    <h2>@Model.ProductGroup.TitleSrt</h2>
+	                <h2>@Model.ProductGroup.TitleSrt</h2>
+                  <img src="@Model.ProductGroup.ImageUrl"/>
                     @Html.Raw(Model.ProductGroup.DescriptionSrt)
                     <div class="wt-separator-outer m-b30">
                         <div class="wt-separator style-square">
@@ -44,9 +44,7 @@
                             <span class="separator-right bg-primary"></span>
                         </div>
                     </div>
-                   
                 </div>
-                <!-- TITLE END -->
 
                 <div class="row">
                  @foreach (Product product in Model.Products)

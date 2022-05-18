@@ -28,7 +28,7 @@ namespace MobinGhateAsia.Controllers
         // GET: Products/Create
         public ActionResult Create()
         {
-            ViewBag.ProductGroupId = new SelectList(db.ProductGroups.Where(p => p.IsDelete == false&&p.ParentId!=null).OrderByDescending(c=>c.SubmitDate), "Id", "Title");
+            ViewBag.ProductGroupId = new SelectList(db.ProductGroups.Where(p => p.IsDelete == false&&p.ParentId==null).OrderByDescending(c=>c.SubmitDate), "Id", "Title");
             return View();
         }
 
@@ -78,7 +78,7 @@ namespace MobinGhateAsia.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ProductGroupId = new SelectList(db.ProductGroups.Where(p => p.IsDelete == false && p.ParentId != null).OrderByDescending(c => c.SubmitDate), "Id", "Title", product.ProductGroupId);
+            ViewBag.ProductGroupId = new SelectList(db.ProductGroups.Where(p => p.IsDelete == false && p.ParentId == null).OrderByDescending(c => c.SubmitDate), "Id", "Title", product.ProductGroupId);
             return View(product);
         }
 
@@ -95,7 +95,7 @@ namespace MobinGhateAsia.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ProductGroupId = new SelectList(db.ProductGroups.Where(p => p.IsDelete == false && p.ParentId != null).OrderByDescending(c => c.SubmitDate), "Id", "Title", product.ProductGroupId);
+            ViewBag.ProductGroupId = new SelectList(db.ProductGroups.Where(p => p.IsDelete == false && p.ParentId == null).OrderByDescending(c => c.SubmitDate), "Id", "Title", product.ProductGroupId);
             return View(product);
         }
 
@@ -143,7 +143,7 @@ namespace MobinGhateAsia.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ProductGroupId = new SelectList(db.ProductGroups.Where(p => p.IsDelete == false && p.ParentId != null).OrderByDescending(c => c.SubmitDate), "Id", "Title", product.ProductGroupId);
+            ViewBag.ProductGroupId = new SelectList(db.ProductGroups.Where(p => p.IsDelete == false && p.ParentId == null).OrderByDescending(c => c.SubmitDate), "Id", "Title", product.ProductGroupId);
             return View(product);
         }
 
