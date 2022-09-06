@@ -19,7 +19,7 @@ namespace Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Label {
@@ -138,6 +138,15 @@ namespace Resources {
         public static string Certificates {
             get {
                 return ResourceManager.GetString("Certificates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to بازرگانی.
+        /// </summary>
+        public static string Commerce {
+            get {
+                return ResourceManager.GetString("Commerce", resourceCulture);
             }
         }
         
@@ -493,6 +502,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to روابط عمومی.
+        /// </summary>
+        public static string Pr {
+            get {
+                return ResourceManager.GetString("Pr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ادامه مطلب.
         /// </summary>
         public static string ReadMore {
@@ -511,7 +529,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to روابط عمومی و فروش.
+        ///   Looks up a localized string similar to فروش.
         /// </summary>
         public static string Sale {
             get {

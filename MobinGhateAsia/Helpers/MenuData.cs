@@ -42,7 +42,7 @@ namespace Helpers
       
         public List<Blog> GetFooterBlog()
         {
-            return db.Blogs.Where(current => current.IsDelete == false).OrderByDescending(current=>current.SubmitDate).ToList();
+            return db.Blogs.Where(current => current.IsDelete == false).OrderByDescending(current=>current.SubmitDate).Take(3).ToList();
         }
 
         public _FooterViewModel ReturnFooterViewModel()

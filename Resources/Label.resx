@@ -331,6 +331,12 @@
     <value>زاوش</value>
   </data>
   <data name="Sale" xml:space="preserve">
-    <value>روابط عمومی و فروش</value>
+    <value>فروش</value>
+  </data>
+  <data name="Commerce" xml:space="preserve">
+    <value>بازرگانی</value>
+  </data>
+  <data name="Pr" xml:space="preserve">
+    <value>روابط عمومی</value>
   </data>
 </root>
