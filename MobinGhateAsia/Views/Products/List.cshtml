@@ -36,16 +36,21 @@
 
                 <div class="p-b10">
 	                <h2>@Model.ProductGroup.TitleSrt</h2>
-                  <img src="@Model.ProductGroup.ImageUrl"/>
+	                <div>
+		                <img src="@Model.ProductGroup.ImageUrl"/>
+	                </div>
+	                <div class="wt-separator-outer m-b30">
+		                <div class="wt-separator style-square">
+			                <span class="separator-left bg-primary"></span>
+			                <span class="separator-right bg-primary"></span>
+		                </div>
+	                </div>
+	                <div class="font-iransans">
                     @Html.Raw(Model.ProductGroup.DescriptionSrt)
-                    <div class="wt-separator-outer m-b30">
-                        <div class="wt-separator style-square">
-                            <span class="separator-left bg-primary"></span>
-                            <span class="separator-right bg-primary"></span>
-                        </div>
-                    </div>
+	                </div>
+                    
                 </div>
-
+                
                 <div class="row">
                  @foreach (Product product in Model.Products)
                  {
